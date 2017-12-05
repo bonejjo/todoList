@@ -1,7 +1,7 @@
 var titleList=new Array();
 var contextList=new Array();
 var i=0;
-function myFunction(){
+function wizardFunction(){
     var bar=$('.ui.sidebar');
     bar.sidebar('toggle');
 }
@@ -10,12 +10,20 @@ function saveFunction(){
     var context=$('#context').val();
     titleList.push(title);
     contextList.push(context);
-    $('.content').append("<li id="+i+">"+titleList[i]+" <i class=\"empty star icon\"></i></li>");
+    $('.content').append("<li>"+titleList[i]+" <i class=\"empty star icon\"></i></li>");
     i++;
 }
+var check=0;
 $(document).on('click','i.empty.star.icon',function(){
-    $(this).parent().css('background-color','yellow');
+    if(!check){
+        $(this).parent().css('background-color','yellow');
+        check=check+1;
+    }else{
+        $(this).parent().css('background-color','transparent');
+        check=check-1;
+    }
 });
+
 $(document).on('click','i.write.icon',function(){
     var bar=$('.ui.sidebar');
     bar.sidebar('hide');
