@@ -10,10 +10,18 @@
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
     <script src="todoList.js"></script>
+    <style>
+        ul{
+            list-style:none;
+        }
+        i.large.write.icon{
+            float: right;
+        }
+    </style>
 </head>
 <body>
     <div class="ui sidebar">
-        <i class="write icon"></i>
+        <i class="large write icon"></i>
         <div class="ui relaxed divided list">
             <ul class="content">
 
@@ -24,12 +32,12 @@
     <div class="pusher">
         <!-- Site content !-->
         <div id="bar">
-            <i class="wizard icon" onclick="wizardFunction()"></i>
-            <i class="save icon" onclick="saveFunction()"></i>
+            <i class="large wizard icon" onclick="wizardFunction()"></i>
+            <i class="large save icon" onclick="saveFunction()"></i>
         </div>
         <div id="input">
             <ul>
-                <li><label>제목: <input type="text" id="title"></label></li>
+                <li><label>제목: <input type="text" id="title"></label></li><br>
                 <li><label>내용: <textarea id="context"></textarea></label></li>
             </ul>
         </div>

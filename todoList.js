@@ -10,7 +10,7 @@ function saveFunction(){
     var context=$('#context').val();
     titleList.push(title);
     contextList.push(context);
-    $('.content').append("<li>"+titleList[i]+" <i class=\"empty star icon\"></i></li>");
+    $('.content').append("<li class=\"list\" id=\""+i+"\">"+titleList[i]+" <i class=\"empty star icon\"></i></li>");
     i++;
 }
 var check=0;
@@ -23,12 +23,15 @@ $(document).on('click','i.empty.star.icon',function(){
         check=check-1;
     }
 });
-
 $(document).on('click','i.write.icon',function(){
     var bar=$('.ui.sidebar');
     bar.sidebar('hide');
     $('#title').val('');
     $('#context').val('');
 });
-
+$(document).on('click','li.list',function(){
+    var clickId=$(this).attr('id');
+    $('#title').val(titleList[clickId]);
+    $('#context').val(contextList[clickId]);
+});
 
